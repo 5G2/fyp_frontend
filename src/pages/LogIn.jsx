@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 
-const LogIn = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevents form from refreshing the page
-    console.log("Login Submitted", { email, password });
     // Here, you would typically handle the login logic, like sending the data to a backend service
   };
 
@@ -36,6 +35,7 @@ const LogIn = () => {
           />
         </div>
         <button type="submit">Login</button>
+        <button type="submit">Sign Up</button>
       </form>
       {/* <Link to="/forgot-password" style={{ marginRight: "10px" }}> */}
       Forgot Password?
@@ -44,4 +44,4 @@ const LogIn = () => {
     </div>
   );
 };
-export default LogIn;
+export default Login;
