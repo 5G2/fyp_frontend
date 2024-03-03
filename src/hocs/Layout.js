@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar/Navbar";
 import "./Layout.scss";
 
 import MenuBar from "../components/MenuBar/MenuBar";
@@ -11,7 +10,6 @@ const Layout = ({ children }) => {
     <div className="layout-container">
       <MenuBar />
       <div className="layout-children">{children}</div>
-      {/* <Footer /> */}
     </div>
   );
 };

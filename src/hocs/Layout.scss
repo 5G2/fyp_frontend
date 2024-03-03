@@ -1,15 +1,6 @@
 @import "src/global";
 
 .layout-container {
-    position: relative;
-
-    .navbar {
-        // min-width: 1020px;
-        margin: auto;
-    }
-    .layout-children {
-        margin: auto;
-        min-width: $min-width;
-        max-width: $max-width;
-    }
+  display: flex;
+  height: 100vh;
 }

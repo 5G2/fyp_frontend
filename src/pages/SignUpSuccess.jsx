@@ -16,7 +16,7 @@ const SignUpSuccessPage = () => {
       <br />
       <br />
       <br />
-      <a>Back to login page.</a>
+      <Link to="/">Back to login page.</Link>
     </div>
   );
 };
