@@ -11,9 +11,9 @@ const Board = (props) => {
       title
       <div className="kan-ban-container">
         <OpenTaskList taskNumber={20} />
-        <InProgressTaskList />
-        <DoneTaskList />
-        <OnHoldTaskList />
+        <InProgressTaskList taskNumber={5} />
+        <DoneTaskList taskNumber={0} />
+        <OnHoldTaskList taskNumber={7} />
       </div>
     </div>
   );
