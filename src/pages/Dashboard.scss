@@ -1,0 +1,28 @@
+.dashboard-container {
+  width: 100%;
+  .dashboard-top {
+    height: 80px;
+    padding-top: 20px;
+    padding-left: 20px;
+    background-color: white;
+    .dashboard-title {
+      font-weight: 800;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    .dashboard-greeting {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #aeaeae;
+    }
+  }
+  .nav-bar-container {
+    // margin-bottom: 30px;
+  }
+  .block-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

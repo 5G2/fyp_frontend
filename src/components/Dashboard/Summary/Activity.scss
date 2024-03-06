@@ -1,0 +1,37 @@
+.activity {
+  margin-top: 15px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.5px solid;
+  border-color: rgba(128, 128, 128, 0.433);
+  .people-svg {
+    color: rgb(255, 196, 0);
+  }
+  .activity-right {
+    margin-left: 15px;
+    .activity-details {
+      display: flex;
+      font-size: 14px;
+      .activity-user {
+        color: rgb(27, 119, 205);
+        margin-right: 5px;
+        font-weight: 600px;
+      }
+      .activity-id {
+        color: rgb(27, 119, 205);
+        margin-left: 5px;
+        font-weight: 600px;
+      }
+      .activity-name {
+        color: rgb(27, 119, 205);
+        margin-left: 5px;
+        font-weight: 600px;
+      }
+    }
+    .activity-creation-date-time {
+      color: #6f6e6e;
+      font-size: 12px;
+    }
+  }
+}

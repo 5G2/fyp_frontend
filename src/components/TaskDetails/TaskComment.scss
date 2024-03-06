@@ -1,0 +1,58 @@
+.task-comment {
+  min-height: 500px;
+  width: 90%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding: 20px;
+  .task-comment-reminder {
+    color: grey;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 3px;
+    margin-bottom: 20px;
+  }
+  .comment-input-container {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    .user-svg {
+      color: #8993a4;
+    }
+    .comment-input {
+      width: 80%;
+      height: 40px;
+      border: 0.5px solid;
+      border-radius: 5px;
+      border-color: #d1d1d1;
+      margin-left: 20px;
+      padding-left: 15px;
+    }
+  }
+  .add-comment {
+    margin-top: 20px;
+    margin-left: 75%;
+    background-color: #8551f4;
+    border: none;
+    color: white;
+    height: 35px;
+    width: 100px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      background-color: #651fff;
+    }
+  }
+  .comments {
+    .comment-history {
+      color: grey;
+      font-weight: 400;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  }
+}

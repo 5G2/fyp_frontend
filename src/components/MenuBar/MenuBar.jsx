@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
-// import logo from "../../../public/hour-of-code-logo.png";
+import { FaUserCircle } from "react-icons/fa";
+// import logo from "../../../public/hour_of_code_logo.png";
 import "./MenuBar.scss";
 
 const MenuBar = () => {
@@ -18,16 +19,17 @@ const MenuBar = () => {
       <div className="menu-top">
         <img
           className="logo-img"
-          src={"menuBarIcon.png"}
+          src={(require = "/menuBarIcon.png")}
           alt="Hour-of-Code"
           width={180}
         />
 
+        {/* if role ===0, user is student, have less right */}
         {context.role === 0 ? (
           <div className="menuBar-container">
             <div className={"menuBar-menu"}>MENU</div>
             <Link
-              to="/dashboard"
+              to="/dashboard/summary"
               className={page === 1 ? "menuBar-item active" : "menuBar-item"}
               onClick={() => changePage(1)}
             >
@@ -52,7 +54,7 @@ const MenuBar = () => {
           <div className="menuBar-container">
             <div className="menuBar-menu">MENU</div>
             <Link
-              to="/dashboard"
+              to="/dashboard/summary"
               className={page === 1 ? "menuBar-item active" : "menuBar-item"}
               onClick={() => changePage(1)}
             >
@@ -85,13 +87,7 @@ const MenuBar = () => {
 
       <div>
         <Link to="/profile" className="profile-container">
-          <img
-            className="logo-img"
-            src={"hour-of-code-logo.png"}
-            alt="Hour-of-Code"
-            width={50}
-            height={50}
-          />
+          <FaUserCircle size={35} className="user-svg" />
           <div>
             <p className="profile-name">Ng Chi To</p>
             <p className="profile-role">Student</p>

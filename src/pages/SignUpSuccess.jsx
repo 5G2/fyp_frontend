@@ -6,8 +6,6 @@ import axios from "axios";
 const SignUpSuccessPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  useEffect(() => {}, []);
   return (
     <div>
       <br />

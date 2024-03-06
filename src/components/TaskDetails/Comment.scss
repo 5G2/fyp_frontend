@@ -1,0 +1,24 @@
+.comment {
+  margin-top: 30px;
+  .comment-info {
+    display: flex;
+    .user-svg {
+      color: orange;
+    }
+    .comment-right {
+      margin-left: 10px;
+      .comment-right-top {
+        display: flex;
+        margin-bottom: 10px;
+        .comment-user {
+          color: #42526e;
+          font-weight: 500;
+        }
+        .comment-time {
+          margin-left: 15px;
+          color: #42526e;
+        }
+      }
+    }
+  }
+}

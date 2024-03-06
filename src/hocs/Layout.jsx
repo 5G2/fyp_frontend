@@ -4,14 +4,14 @@ import "./Layout.scss";
 import MenuBar from "../components/MenuBar/MenuBar";
 
 const Layout = ({ children }) => {
-
-
   return (
     <div className="layout-container">
-      <MenuBar />
-      <div className="layout-children">{children}</div>
+      <div className="menu-bar-container">
+        <MenuBar />
+      </div>
+      <div className="layout-children-container">{children}</div>
     </div>
   );
 };
 
-export default (Layout);
+export default Layout;

@@ -12,11 +12,12 @@ import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import PeoplePage from "./pages/PeoplePage";
 import NotificationPage from "./pages/NotificationPage";
-
+import TaskDetailsPage from "./pages/TaskDetailsPage";
 export const UserContext = createContext(null);
 
 function App() {
 
+  // const [user, setUser] = useState(null);
   const [user, setUser] = useState("Ivan");
   const [role, setRole] = useState(1);
   const [jwt, setJwt] = useState(null);
@@ -47,11 +48,12 @@ function App() {
             <Router>
               <Layout>
                 <Routes>
-                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/dashboard/:dashboardPage" element={<Dashboard />} />
                   <Route path="/project" element={<ProjectPage />} />
                   <Route path="/people" element={<PeoplePage />} />
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/notification" element={<NotificationPage />} />
+                  <Route path="/task/:id" element={<TaskDetailsPage />} />
                 </Routes>
               </Layout>
             </Router>
@@ -62,6 +64,7 @@ function App() {
               <Route path="/" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/signupsuccess" element={<SignUpSuccessPage />} />
+
             </Routes>
           </Router>
 

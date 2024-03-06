@@ -48,7 +48,7 @@ const Login = () => {
     >
       <div className="login-container">
         <div className="header-container">
-          <img src="hour-of-code-logo.png" className="logo" width={60} />
+          <img src="/hour_of_code_logo.png" className="logo" width={60} />
           <div className="divider"></div>
           <div className="login-title">Login</div>
         </div>

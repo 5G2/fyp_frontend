@@ -3,4 +3,13 @@
 .layout-container {
   display: flex;
   height: 100vh;
+  .menu-bar {
+    width: 15%;
+  }
+  .layout-children-container {
+    background-color: #f9f9f9;
+    width: 85%;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
 }
