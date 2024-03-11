@@ -1,0 +1,26 @@
+.notification-page {
+  padding: 3%;
+  .notification-title {
+    font-weight: 800;
+    font-size: 26px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+  .filter-list {
+    display: flex;
+    border-bottom: 2px solid #dddddd;
+
+    .filter-list-item {
+      // width: 10%;
+      margin-right: 20px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      cursor: pointer;
+    }
+    .filter-list-item-active {
+      color: var(--ds-text-selected, #0052cc);
+      border-bottom: 2px solid #0052cc;
+    }
+  }
+}

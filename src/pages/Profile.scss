@@ -1,0 +1,90 @@
+.profile {
+  position: relative;
+  display: grid;
+  // display: flex;
+  padding-left: 3%;
+  padding-right: 3%;
+  grid-template-columns: repeat(1, minmax(300px, 1fr) minmax(500px, 2fr));
+  grid-gap: 3%;
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  justify-content: space-around;
+  .top-bg-color {
+    background-color: #ddd7fb;
+    height: 170px;
+    width: 100%;
+    position: absolute;
+  }
+  .profile-left {
+    // width: 30%;
+    width: 100%;
+    .user-svg {
+      position: absolute;
+      top: 100px;
+      left: 60px;
+      color: #876ffc;
+      border: 3px solid white;
+      background-color: white;
+      border-radius: 100px;
+    }
+    .username {
+      margin-top: 260px;
+      font-size: 30px;
+      font-weight: 600;
+      color: #172b4d;
+    }
+    .logout-btn {
+      margin-top: 20px;
+      width: 100%;
+      height: 30px;
+      border: none;
+      background-color: rgb(46, 150, 255, 0.8);
+      font-size: 18px;
+      color: white;
+      border-radius: 5px;
+      font-weight: 600;
+      &:hover {
+        background-color: rgb(46, 150, 255, 1);
+      }
+    }
+    .profile-about-container {
+      margin-top: 30px;
+    }
+  }
+  .profile-right {
+    margin-top: 220px;
+    margin-bottom: 50px;
+    // width: 62%;
+    width: 100%;
+    @media (max-width: 1100px) {
+      margin-top: 0px;
+    }
+    .task-on-hand-title {
+      color: #172b4d;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .contributing-to-title {
+      color: #172b4d;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+    .feedback-notice {
+      margin-top: 30px;
+      color: grey;
+      margin-bottom: 10px;
+    }
+    .feedback-btn {
+      background-color: rgba(25, 118, 210, 0.15);
+      margin-bottom: 40px;
+      &:hover {
+        background-color: rgba(25, 118, 210, 0.3);
+      }
+    }
+  }
+}

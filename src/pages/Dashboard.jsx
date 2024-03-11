@@ -13,6 +13,7 @@ import "./Dashboard.scss";
 import Summary from "../components/Dashboard/Summary/Summary";
 import List from "../components/Dashboard/List/List";
 import Board from "../components/Dashboard/Board/Board";
+import Calendar from "../components/Dashboard/Calendar/Calendar";
 
 const Dashboard = () => {
   const context = useContext(UserContext);
@@ -38,6 +39,8 @@ const Dashboard = () => {
         return <Board />;
       case "list":
         return <List />;
+      case "calendar":
+        return <Calendar />;
       default:
         return "foo";
     }

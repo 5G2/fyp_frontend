@@ -2,7 +2,7 @@ import "./App.scss";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "./hocs/Layout";
-import { useState, createContext } from 'react';
+import { useState, createContext, useEffect } from 'react';
 
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
@@ -18,9 +18,9 @@ export const UserContext = createContext(null);
 function App() {
 
   // const [user, setUser] = useState(null);
-  const [user, setUser] = useState("Ivan");
-  const [role, setRole] = useState(1);
-  const [jwt, setJwt] = useState(null);
+  const [user, setUser] = useState(localStorage.getItem("username"));
+  const [role, setRole] = useState(localStorage.getItem("role"));
+  const [jwt, setJwt] = useState(localStorage.getItem("access"));
 
   const [page, setPage] = useState(1)
 
@@ -38,7 +38,9 @@ function App() {
     page,
     setPage
   }
-
+  useEffect(() => {
+    console.log("user" + user)
+  }, [])
   return (
     // <UserContext.Provider value="123">
     <UserContext.Provider value={provider}>

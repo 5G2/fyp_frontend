@@ -8,7 +8,13 @@ const ActivityBlock = (props) => {
   // const context = useContext(UserContext);
 
   const [tasks, setTasks] = useState([
-    { id: 1, user: "user1", action: "create", name: "task 1" },
+    {
+      taskId: 1,
+      user: "user1",
+      userId: "ivanng",
+      action: "create",
+      name: "task 1",
+    },
     { id: 2, user: "user2", action: "update", name: "task 1" },
     { id: 3, user: "user3", action: "comment", name: "task 1" },
     { id: 4, user: "user4", action: "create", name: "task 1" },
@@ -30,10 +36,12 @@ const ActivityBlock = (props) => {
           tasks.map((task) => {
             return (
               <Activity
-                id={task.id}
+                taskId={task.taskId}
+                userId={task.userId}
                 user={task.user}
                 action={task.action}
                 name={task.name}
+                date={"2022-9-7"}
               />
             );
           })

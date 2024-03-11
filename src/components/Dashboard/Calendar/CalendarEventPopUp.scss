@@ -1,0 +1,82 @@
+.calendar-event-pop-up {
+  width: 200px;
+  width: 500px;
+  padding: 20px;
+  .task-details-item-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    .tast-details-item-title {
+      color: #42526e;
+      font-weight: 600;
+      font-size: 16px;
+      margin-right: 20px;
+      width: 100px;
+    }
+    .tast-details-item-id {
+      text-decoration: none;
+      color: #aaaaaa;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .tast-person {
+      //   margin-top: 10px;
+      display: flex;
+      align-items: center;
+      .people-svg {
+        color: orange;
+        tab-size: 1;
+      }
+      .tast-person-username {
+        margin-left: 10px;
+      }
+    }
+    .tast-details-item-status {
+      box-sizing: border-box;
+      text-transform: uppercase;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 5px 10px;
+    }
+    .list-table-item-status-open {
+      background-color: #dfe1e6;
+      color: #42526e;
+      width: 52px;
+    }
+    .list-table-item-status-in-progress {
+      background-color: #deebff;
+      color: #0052cc;
+      width: 100px;
+    }
+    .list-table-item-status-done {
+      background-color: #e3fcef;
+      color: #006644;
+      width: 52px;
+    }
+    .list-table-item-status-on-hold {
+      background-color: rgb(255, 246, 195);
+      color: #8a8f00;
+      width: 80px;
+    }
+    .tast-date {
+      margin-top: 5px;
+    }
+    .status-selector {
+      height: 30px;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-top: 10px;
+      background-color: #0c66e4;
+      color: white;
+      font-weight: 500;
+      border: none;
+      padding-left: 10px;
+      width: 85px;
+      padding-right: 10px;
+    }
+  }
+  .first-container {
+    margin-top: 0px;
+  }
+}

@@ -8,7 +8,6 @@ import OnHoldTaskList from "./OnHoldTaskList";
 const Board = (props) => {
   return (
     <div className="board">
-      title
       <div className="kan-ban-container">
         <OpenTaskList taskNumber={20} />
         <InProgressTaskList taskNumber={5} />

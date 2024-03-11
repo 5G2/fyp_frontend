@@ -1,0 +1,114 @@
+.list-table {
+  // height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  margin: 20px;
+  margin-top: 30px;
+  overflow-y: scroll;
+  //   overflow-x: visible;
+  display: block;
+  //   white-space: nowrap;
+  border-collapse: collapse;
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+  }
+
+  .list-table-title {
+    box-shadow: inset 0 -2px 0 #dddddd;
+    height: 40px;
+    top: -2px;
+    z-index: 2;
+    position: sticky;
+    color: #5e6c84;
+    font-weight: 400;
+    font-size: 14px;
+
+    .list-table-title-item {
+      background-color: white;
+    }
+    .list-table-title-key {
+      min-width: 75px;
+    }
+    .list-table-title-summary {
+      min-width: 300px;
+    }
+    .list-table-title-status {
+      min-width: 120px;
+    }
+    .list-table-title-due-date {
+      min-width: 100px;
+    }
+    .list-table-title-project {
+      min-width: 100px;
+    }
+    .list-table-title-assignee {
+      min-width: 150px;
+    }
+  }
+  .list-table-item {
+    height: 60px;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #ebecf0;
+    }
+    .list-table-item-id {
+      font-size: 15px;
+      font-weight: 600;
+      .list-table-item-id-link {
+        color: #8993a4;
+        text-decoration: none;
+      }
+    }
+    .list-table-item-summary,
+    .list-table-item-date {
+      color: #172b4d;
+      font-size: 14px;
+    }
+    .list-table-item-status {
+      box-sizing: border-box;
+      text-transform: uppercase;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 5px 10px;
+    }
+    .list-table-item-status-open {
+      background-color: #dfe1e6;
+      color: #42526e;
+      width: 52px;
+    }
+    .list-table-item-status-in-progress {
+      background-color: #deebff;
+      color: #0052cc;
+      width: 100px;
+    }
+    .list-table-item-status-done {
+      background-color: #e3fcef;
+      color: #006644;
+      width: 52px;
+    }
+    .list-table-item-status-on-hold {
+      background-color: rgb(255, 246, 195);
+      color: #8a8f00;
+      width: 80px;
+    }
+    .list-table-item-assignee {
+      color: #8993a4;
+      font-size: 15px;
+      font-weight: 600;
+      .list-table-item-assignee-container {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        .people-svg {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

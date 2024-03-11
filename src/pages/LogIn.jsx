@@ -28,7 +28,11 @@ const Login = () => {
         context.setUser(response.data.username);
         context.setRole(response.data.role);
         context.setJwt(response.data.access);
-        navigate("../home");
+        localStorage.setItem("username", response.data.username);
+        localStorage.setItem("role", response.data.role);
+        localStorage.setItem("access", response.data.access);
+        console.log();
+        navigate("../dashboard/summary");
       }
     } catch (error) {
       console.error(error);

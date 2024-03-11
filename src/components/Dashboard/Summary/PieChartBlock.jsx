@@ -65,7 +65,11 @@ const PieChartBlock = (props) => {
           },
         }}
       >
-        <PieCenterLabel>Total task: {task}</PieCenterLabel>
+        <PieCenterLabel>
+          Total task:
+          <br />
+          {task}
+        </PieCenterLabel>
       </PieChart>
     </div>
   );

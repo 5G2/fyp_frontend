@@ -86,7 +86,11 @@ const MenuBar = () => {
       </div>
 
       <div>
-        <Link to="/profile" className="profile-container">
+        <Link
+          to="/profile"
+          className="profile-container"
+          onClick={() => changePage(0)}
+        >
           <FaUserCircle size={35} className="user-svg" />
           <div>
             <p className="profile-name">Ng Chi To</p>

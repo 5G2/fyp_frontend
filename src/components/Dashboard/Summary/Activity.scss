@@ -14,24 +14,30 @@
       display: flex;
       font-size: 14px;
       .activity-user {
+        text-decoration: none;
         color: rgb(27, 119, 205);
         margin-right: 5px;
         font-weight: 600px;
       }
-      .activity-id {
-        color: rgb(27, 119, 205);
-        margin-left: 5px;
-        font-weight: 600px;
-      }
-      .activity-name {
-        color: rgb(27, 119, 205);
-        margin-left: 5px;
-        font-weight: 600px;
+      .activity-link-to-task {
+        display: flex;
+        text-decoration: none;
+        .activity-id {
+          color: rgb(27, 119, 205);
+          margin-left: 5px;
+          font-weight: 600px;
+        }
+        .activity-name {
+          color: rgb(27, 119, 205);
+          margin-left: 5px;
+          font-weight: 600px;
+        }
       }
     }
     .activity-creation-date-time {
       color: #6f6e6e;
       font-size: 12px;
+      margin-top: 2px;
     }
   }
 }
