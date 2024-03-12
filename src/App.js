@@ -13,6 +13,7 @@ import Profile from "./pages/Profile";
 import PeoplePage from "./pages/PeoplePage";
 import NotificationPage from "./pages/NotificationPage";
 import TaskDetailsPage from "./pages/TaskDetailsPage";
+import ProjectDetails from "./pages/ProjectDetails";
 export const UserContext = createContext(null);
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/notification" element={<NotificationPage />} />
                   <Route path="/task/:id" element={<TaskDetailsPage />} />
+                  <Route path="/project/:id/:projectDetailsPage" element={<ProjectDetails />} />
                 </Routes>
               </Layout>
             </Router>

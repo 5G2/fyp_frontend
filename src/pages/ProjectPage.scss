@@ -30,15 +30,16 @@
       background-color: #0052cc;
     }
   }
-  .in-progress-project-section {
-    .in-progress-project-title {
+  .project-section {
+    .project-section-title {
       font-size: 18px;
+      margin-bottom: 20px;
       color: #7f7e7e;
     }
-    .in-progress-projects-container {
+    .projects-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      grid-gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      grid-gap: 20px;
     }
   }
 }

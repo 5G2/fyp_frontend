@@ -17,9 +17,31 @@ const ProjectPage = () => {
         Add new
       </Button>
 
-      <div className="in-progress-project-section">
-        <div className="in-progress-project-title">In - Progress</div>
-        <div className="in-progress-projects-container">
+      <div className="project-section">
+        <div className="project-section-title">In - Progress</div>
+        <div className="projects-container">
+          <Project
+            title={"A new project"}
+            teamsize={18}
+            taskCompletePercentage={49}
+            projectProgress={12}
+            openTask={240}
+            inProgress={240}
+            onHoldTask={240}
+            id={"PJ-981"}
+          />
+          <Project />
+          <Project />
+          <Project />
+          <Project />
+        </div>
+      </div>
+      <br />
+      <br />
+      <div className="project-section">
+        <div className="project-section-title">Completed</div>
+        <div className="projects-container">
+          <Project />
           <Project />
           <Project />
           <Project />

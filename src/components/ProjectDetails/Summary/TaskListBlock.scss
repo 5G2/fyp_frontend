@@ -1,0 +1,23 @@
+.task-list {
+  background-color: white;
+  border: 0.5px solid;
+  border-color: #dddddd;
+  height: 400px;
+  width: 90%;
+  min-width: 450px;
+  border-radius: 10px;
+  padding: 20px;
+  .task-link {
+    text-decoration: none;
+    .task-list-title {
+      font-weight: 800px;
+      font-size: 24px;
+      color: #6c6b6b;
+    }
+    .task-list-details {
+      margin-top: 10px;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+  }
+}

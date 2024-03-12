@@ -1,0 +1,41 @@
+.block {
+  height: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-basis: 25%;
+  min-width: 230px;
+  border: 0.5px solid;
+  border-color: #dddddd;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding-left: 20px;
+  text-decoration: none;
+  transition: box-shadow 0.5s;
+  background-color: white;
+
+  &:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  .block-svg {
+    background-color: #eeeeee;
+    height: 20px;
+    width: 20px;
+    padding: 15px;
+    border-radius: 100%;
+  }
+  .block-right {
+    margin-left: 20px;
+    .task-number {
+      font-size: 24px;
+      color: #9660bf;
+      font-weight: 600;
+      margin-bottom: 0px;
+    }
+    .seven-days {
+      font-weight: 400;
+      color: #5e6c84;
+      font-size: 14px;
+    }
+  }
+}

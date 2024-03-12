@@ -1,6 +1,62 @@
-.project {
-  height: 220px;
-  width: 350px;
-  border-radius: 10px;
-  background-color: #dddddd;
+.project-link {
+  text-decoration: none;
+  .project {
+    //   height: 320px;
+    min-width: 350px;
+    //   max-width: 550px;
+    border-radius: 10px;
+    background-color: #dddddd;
+    margin-bottom: 15px;
+    padding: 25px;
+    box-sizing: border-box;
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      .project-title {
+        font-size: 24px;
+        color: #515151;
+        font-weight: 600;
+      }
+      .details-svg {
+        color: #515151;
+      }
+    }
+    .team-size-container {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      color: #515151;
+      .team-size-value {
+        margin-left: 5px;
+        // color:#8c619d5b
+      }
+    }
+    .task-completed-container {
+      margin-top: 5px;
+      .progress-bar-top {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #777777;
+      }
+      .linear-bar {
+        height: 8px;
+        border-radius: 10px;
+        margin-top: 8px;
+      }
+    }
+    .task-data-container {
+      margin-top: 30px;
+      display: flex;
+      margin-right: 10px;
+      justify-content: space-around;
+      .task-type-title {
+        margin-bottom: 10px;
+        margin-left: 14px;
+        color: #777777;
+      }
+    }
+  }
 }

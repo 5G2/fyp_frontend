@@ -1,0 +1,19 @@
+.project-details-container {
+  .project-details-top {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    .project-link {
+      color: #aaaaaa;
+      font-size: 20;
+    }
+    .arrow-right-svg {
+      color: #aaaaaa;
+    }
+    .dashboard-title {
+      font-size: 26px;
+      font-weight: 600;
+    }
+  }
+}
