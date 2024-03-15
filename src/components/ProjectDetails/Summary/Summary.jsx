@@ -15,7 +15,6 @@ import TaskList from "./TaskListBlock";
 const Summary = (props) => {
   //   const context = useContext(UserContext);
 
-  useEffect(() => {}, []);
   return (
     <div className="summary">
       <div className="block-container">

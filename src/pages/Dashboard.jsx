@@ -23,7 +23,6 @@ const Dashboard = () => {
   const [taskUpdate, setTaskUpdate] = useState(0);
   const [taskCreate, setTaskCreate] = useState(0);
   const [taskDue, setTaskDue] = useState(0);
-  console.log(dashboardPage);
   const renderSwitch = () => {
     switch (dashboardPage) {
       case "summary":
@@ -45,8 +44,30 @@ const Dashboard = () => {
         return "foo";
     }
   };
+  useEffect(() => {
+    const fetchSevenDaysTasksNumber = async () => {
+      try {
+        const response = await axios.get(
+          "http://127.0.0.1:8000/api/getSevenDaysTasksNumber/",
+          {
+            headers: {
+              Authorization: `JWT ${localStorage.getItem("access")}`, // Use getItem instead of setItem
+            },
+          }
+        );
+        setTaskDone(response.data.number_of_done_task);
+        setTaskUpdate(response.data.number_of_updated_tasks);
+        setTaskCreate(response.data.number_of_create_task);
+        setTaskDue(response.data.number_of_due_tasks);
+        // Process the response data here
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-  useEffect(() => {}, []);
+    fetchSevenDaysTasksNumber(); // Invoke the fetchData function
+  }, []);
+
   return (
     <div className="dashboard-container">
       <div className="dashboard-top">

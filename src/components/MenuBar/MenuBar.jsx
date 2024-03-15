@@ -7,7 +7,6 @@ import "./MenuBar.scss";
 
 const MenuBar = () => {
   const context = useContext(UserContext);
-  // console.log(context.role);
   const page = context.page;
   console.log(page);
 

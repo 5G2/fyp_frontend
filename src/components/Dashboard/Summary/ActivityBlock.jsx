@@ -20,7 +20,6 @@ const ActivityBlock = (props) => {
     { id: 4, user: "user4", action: "create", name: "task 1" },
     { id: 1, user: "user1", action: "create", name: "task 1" },
   ]);
-  console.log(tasks);
   return (
     <div className="activity-block">
       <div className="activity-block-title">Recent Activity</div>

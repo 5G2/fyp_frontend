@@ -15,12 +15,41 @@ import "./PieChartBlock.scss";
 const PieChartBlock = (props) => {
   // const context = useContext(UserContext);
 
-  const data = [
-    { label: "Open", value: 240 },
-    { label: "Closed", value: 467 },
-    { label: "In Progress", value: 198 },
-    { label: "On Hold", value: 900 },
-  ];
+  const [data, setData] = useState([
+    { label: "Open", value: 0 },
+    { label: "Closed", value: 0 },
+    { label: "In Progress", value: 0 },
+    { label: "On Hold", value: 0 },
+  ]);
+  useEffect(() => {
+    const fetchAllTasksNumber = async () => {
+      try {
+        const response = await axios.get(
+          "http://127.0.0.1:8000/api/getTotalTaskNumber/",
+          {
+            headers: {
+              Authorization: `JWT ${localStorage.getItem("access")}`, // Use getItem instead of setItem
+            },
+          }
+        );
+        setData([
+          { label: "Open", value: response.data.number_of_open_tasks },
+          { label: "Closed", value: response.data.number_of_closed_tasks },
+          {
+            label: "In Progress",
+            value: response.data.number_of_in_progress_tasks,
+          },
+          { label: "On Hold", value: response.data.number_of_on_hold_tasks },
+        ]);
+        console.log("success");
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchAllTasksNumber(); // Invoke the fetchData function
+  }, []);
+
   const task = data.reduce((total, item) => total + item.value, 0);
 
   function PieCenterLabel({ children }: { children: React.ReactNode }) {

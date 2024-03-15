@@ -27,7 +27,6 @@ const SignUp = () => {
       });
       // Handle the successful account creation
 
-      console.log(response.data);
       if (response.status === 201) {
         window.location.replace("signupsuccess");
       }

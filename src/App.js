@@ -39,9 +39,7 @@ function App() {
     page,
     setPage
   }
-  useEffect(() => {
-    console.log("user" + user)
-  }, [])
+
   return (
     // <UserContext.Provider value="123">
     <UserContext.Provider value={provider}>
