@@ -38,8 +38,19 @@ const Calendar = (props) => {
         return "#fcd01c";
     }
   };
-  const [tasks, setTasks] = useState([]);
 
+  const stateName = (value) => {
+    switch (value) {
+      case 1:
+        return "Open";
+      case 2:
+        return "In-Progress";
+      case 3:
+        return "Done";
+      case 4:
+        return "On-Hold";
+    }
+  };
   useEffect(() => {
     const fetchTasks = async () => {
       try {
@@ -49,16 +60,34 @@ const Calendar = (props) => {
           )}`,
           {
             headers: {
-              Authorization: `JWT ${localStorage.getItem("access")}`, // Use getItem instead of setItem
+              Authorization: `JWT ${localStorage.getItem("access")}`,
             },
           }
         );
-        setTasks(response.data.filter((task) => task.state === 3));
+        setDataSource(
+          response.data.map((task) => ({
+            date: new Date(task.due_date.split("T")[0]), // Assuming task.due_date is in the correct format
+            color: checkPriority(task.priority),
+            title: "Task Details",
+            popupContent: (
+              <CalendarEventPopUp
+                taskID={task.code}
+                creator={task.creator}
+                reportor={task.reportor}
+                assignee={task.assignee}
+                status={stateName(task.state)}
+                priority={task.priority}
+                creationDate={task.create_at}
+                startDate={task.start_date}
+              />
+            ),
+          }))
+        );
       } catch (error) {
         console.log(error);
       }
     };
-    fetchTasks(); // Invoke the fetchData function
+    fetchTasks();
   }, []);
   const data = [
     {
@@ -79,79 +108,8 @@ const Calendar = (props) => {
         />
       ),
     },
-    {
-      date: new Date("2024-03-27"),
-      color: checkPriority(1),
-
-      title: "Task Details",
-      popupContent: (
-        <CalendarEventPopUp
-          taskID={"APK-001"}
-          creator={"Ivan"}
-          reportor={"Ivan"}
-          assignee={"Ivan"}
-          status={"In-Progress"}
-          priority={1}
-          creationDate={"2022-12-1"}
-          startDate={"2023-4-3"}
-        />
-      ),
-    },
-    {
-      date: new Date("2024-03-27"),
-      color: checkPriority(3),
-
-      title: "Task Details",
-      popupContent: (
-        <CalendarEventPopUp
-          taskID={"APK-001"}
-          creator={"Ivan"}
-          reportor={"Ivan"}
-          assignee={"Ivan"}
-          status={"In-Progress"}
-          priority={3}
-          creationDate={"2022-12-1"}
-          startDate={"2023-4-3"}
-        />
-      ),
-    },
-    {
-      date: new Date("2024-03-27"),
-      color: checkPriority(4),
-
-      title: "Task Details",
-      popupContent: (
-        <CalendarEventPopUp
-          taskID={"APK-001"}
-          creator={"Ivan"}
-          reportor={"Ivan"}
-          assignee={"Ivan"}
-          status={"In-Progress"}
-          priority={4}
-          creationDate={"2022-12-1"}
-          startDate={"2023-4-3"}
-        />
-      ),
-    },
-    {
-      date: new Date("2024-03-27"),
-      color: checkPriority(5),
-
-      title: "Task Details",
-      popupContent: (
-        <CalendarEventPopUp
-          taskID={"APK-001"}
-          creator={"Ivan"}
-          reportor={"Ivan"}
-          assignee={"Ivan"}
-          status={"In-Progress"}
-          priority={5}
-          creationDate={"2022-12-1"}
-          startDate={"2023-4-3"}
-        />
-      ),
-    },
   ];
+  // const [dataSource, setDataSource] = useState(eventsData);
   const [dataSource, setDataSource] = useState(data);
 
   return (

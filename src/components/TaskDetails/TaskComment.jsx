@@ -1,12 +1,54 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
-
 import axios from "axios";
+
 import "./TaskComment.scss";
 import Comment from "./Comment";
 const TaskComment = (props) => {
+  // const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
+  const navigate = useNavigate();
+
+  const PostComment = () => {
+    try {
+      axios.post(
+        "http://127.0.0.1:8000/api/createComment/",
+        {
+          message: comment,
+          task_id: props.taskId,
+        },
+        {
+          headers: { Authorization: `JWT ${localStorage.getItem("access")}` },
+        }
+      );
+      props.setCommentState((value) => value + 1);
+      setComment("");
+    } catch (error) {
+      // Handle the error
+      console.error(error);
+    }
+    navigate(window.location.pathname);
+  };
+  // useEffect(() => {
+  //   const fetchComment = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `http://127.0.0.1:8000/api/getComments/?task_id=${props.taskId}`,
+  //         {
+  //           headers: {
+  //             Authorization: `JWT ${localStorage.getItem("access")}`, // Use getItem instead of setItem
+  //           },
+  //         }
+  //       );
+  //       setComments(response.data);
+  //       console.log(response.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchComment(); // Invoke the fetchData function
+  // }, []);
   return (
     <div className="task-comment">
       <div className="task-comment-reminder">
@@ -21,22 +63,24 @@ const TaskComment = (props) => {
           value={comment}
         />
       </div>
-      <button className="add-comment">Comment</button>
+      <button className="add-comment" onClick={() => PostComment()}>
+        Comment
+      </button>
 
       <div className="comments">
         <div className="comment-history">Comment History:</div>
-        <Comment
-          name={"Ivan Ng"}
-          datetime={"July 29, 2023 at 1:15 AM"}
-          comment={"this is a new comment"}
-        />
-        <Comment
-          name={"Ivan Ng"}
-          datetime={"July 29, 2023 at 1:15 AM"}
-          comment={"here is another new comment for this task is a new comment"}
-        />
+        {props.comments.map((comment) => {
+          return (
+            <Comment
+              name={comment.creator}
+              datetime={comment.create_at}
+              comment={comment.message}
+            />
+          );
+        })}
       </div>
     </div>
   );
 };
+
 export default TaskComment;

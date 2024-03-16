@@ -7,6 +7,8 @@ import "./TaskDetails.scss";
 import { border } from "@cloudinary/url-gen/qualifiers/background";
 
 const TaskDetails = (props) => {
+  console.log("props.priority");
+  console.log(props.priority);
   const checkPriority = (value) => {
     switch (value) {
       case 1:
@@ -49,10 +51,10 @@ const TaskDetails = (props) => {
       <div className="task-details-item-container">
         <div className="tast-person-title">Status:</div>
         <select className="status-selector" value={props.status}>
-          <option value="Open">Open</option>
-          <option value="In Progress">In Progress</option>
-          <option value="On Hold">On Hold</option>
-          <option value="Closed">Closed</option>
+          <option value={1}>Open</option>
+          <option value={2}>In Progress</option>
+          <option value={3}>On Hold</option>
+          <option value={4}>Closed</option>
         </select>
       </div>
       <div className="task-details-item-container">

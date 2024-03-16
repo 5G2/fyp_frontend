@@ -55,7 +55,7 @@ function App() {
                   <Route path="/people" element={<PeoplePage />} />
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/notification" element={<NotificationPage />} />
-                  <Route path="/task/:id" element={<TaskDetailsPage />} />
+                  <Route path="/task/:code" element={<TaskDetailsPage />} />
                   <Route path="/project/:id/:projectDetailsPage" element={<ProjectDetails />} />
                 </Routes>
               </Layout>

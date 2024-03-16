@@ -36,7 +36,10 @@ const TaskHeader = (props) => {
         <div className="task-basic-info-title">Due Date</div>
       </div>
       <div className="task-basic-info-data">
-        <Link className="task-basic-info assignee clickable">
+        <Link
+          className="task-basic-info assignee clickable"
+          to={`/profile/${props.assignee_id}`}
+        >
           <FaUserCircle size={25} className="user-svg" />
           {props.assignee}
         </Link>
