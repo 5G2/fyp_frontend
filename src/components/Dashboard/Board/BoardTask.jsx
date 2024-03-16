@@ -36,7 +36,7 @@ const BoardTask = (props) => {
   };
 
   return (
-    <Link className="board-task-link" to={`/task/${props.id}`}>
+    <Link className="board-task-link" to={`/task/${props.code}`}>
       <div className={"board-task " + checkPriorityBGColor(1)}>
         <div className="board-task-id"> {props.id}</div>
         <div className="board-task-name">{props.taskName}</div>

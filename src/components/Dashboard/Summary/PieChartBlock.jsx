@@ -41,7 +41,6 @@ const PieChartBlock = (props) => {
           },
           { label: "On Hold", value: response.data.number_of_on_hold_tasks },
         ]);
-        console.log("success");
       } catch (error) {
         console.log(error);
       }

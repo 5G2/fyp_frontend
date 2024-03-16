@@ -10,7 +10,7 @@ import "./Summary.scss";
 import PieChartBlock from "./PieChartBlock";
 import ActivityBlock from "./ActivityBlock";
 import ProjectTasksBlock from "./ProjectTasksBlock";
-import TaskList from "./TaskListBlock";
+import TaskListBlock from "./TaskListBlock";
 
 const Summary = (props) => {
   //   const context = useContext(UserContext);
@@ -29,7 +29,7 @@ const Summary = (props) => {
         <ActivityBlock />
       </div>
       <div className="third-block-container">
-        <TaskList />
+        <TaskListBlock />
         <ProjectTasksBlock />
       </div>
     </div>

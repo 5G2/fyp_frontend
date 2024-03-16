@@ -13,6 +13,7 @@ import {
   TextField,
 } from "@mui/material";
 import moment from "moment";
+import axios from "axios";
 import { EventCalendar } from "react-mui-event-calendar";
 
 import CalendarEventPopUp from "./CalendarEventPopUp";
@@ -37,7 +38,28 @@ const Calendar = (props) => {
         return "#fcd01c";
     }
   };
+  const [tasks, setTasks] = useState([]);
 
+  useEffect(() => {
+    const fetchTasks = async () => {
+      try {
+        const response = await axios.get(
+          `http://127.0.0.1:8000/api/getTasks/?user_id=${localStorage.getItem(
+            "user_id"
+          )}`,
+          {
+            headers: {
+              Authorization: `JWT ${localStorage.getItem("access")}`, // Use getItem instead of setItem
+            },
+          }
+        );
+        setTasks(response.data.filter((task) => task.state === 3));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchTasks(); // Invoke the fetchData function
+  }, []);
   const data = [
     {
       date: new Date("2024-03-27"),

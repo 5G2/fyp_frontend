@@ -28,6 +28,7 @@ const Login = () => {
         context.setRole(response.data.role);
         context.setJwt(response.data.access);
         localStorage.setItem("username", response.data.username);
+        localStorage.setItem("user_id", response.data.user_id);
         localStorage.setItem("role", response.data.role);
         localStorage.setItem("access", response.data.access);
         navigate("../dashboard/summary");

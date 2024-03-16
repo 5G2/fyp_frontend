@@ -20,6 +20,7 @@ function App() {
 
   // const [user, setUser] = useState(null);
   const [user, setUser] = useState(localStorage.getItem("username"));
+  const [userId, setUserId] = useState(localStorage.getItem("user_id"));
   const [role, setRole] = useState(localStorage.getItem("role"));
   const [jwt, setJwt] = useState(localStorage.getItem("access"));
 

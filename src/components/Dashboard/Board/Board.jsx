@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 import "./Board.scss";
 import OpenTaskList from "./OpenTaskList";
 import InProgressTaskList from "./InProgressTaskList";
@@ -9,10 +11,10 @@ const Board = (props) => {
   return (
     <div className="board">
       <div className="kan-ban-container">
-        <OpenTaskList taskNumber={20} />
-        <InProgressTaskList taskNumber={5} />
-        <DoneTaskList taskNumber={0} />
-        <OnHoldTaskList taskNumber={7} />
+        <OpenTaskList />
+        <InProgressTaskList />
+        <DoneTaskList />
+        <OnHoldTaskList />
       </div>
     </div>
   );
