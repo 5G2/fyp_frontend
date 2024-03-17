@@ -12,7 +12,7 @@ import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
 const Project = (props) => {
-  const data = [{ label: "Open", value: props.openTask }];
+  const data = [{ label: "Open", value: 1 }];
   function PieCenterLabel({ children }: { children: React.ReactNode }) {
     const { width, height, left, top } = useDrawingArea();
     return (
@@ -30,7 +30,7 @@ const Project = (props) => {
     fontWeight: 600,
   }));
   return (
-    <Link className="project-link" to={`/project/${props.id}/summary`}>
+    <Link className="project-link" to={`/project/${props.code}/summary`}>
       <div className="project">
         <div className="project-header">
           <div className="project-title">{props.title}</div>

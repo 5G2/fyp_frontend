@@ -7,12 +7,17 @@ import { IoPeopleSharp } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 const ProfileAbout = (props) => {
+  const checkRole = (value) => {
+    if (value === 0) return "Student";
+    else return "Tutor";
+  };
+
   return (
     <div className="profile-about">
       <div className="about">ABOUT</div>
       <div className="profile-about-item">
         <IoPeopleSharp className="profile-about-svg" size={30} />
-        <div className="profile-about-info">{props.role}</div>
+        <div className="profile-about-info">{checkRole(props.role)}</div>
       </div>
       <div className="profile-about-item">
         <FaTransgender className="profile-about-svg" size={30} />

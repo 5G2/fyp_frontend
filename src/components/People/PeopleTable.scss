@@ -28,6 +28,12 @@
   .people-table-title-item {
     background-color: white;
   }
+  .people-table-title-item-date {
+    min-width: 100px;
+  }
+  .people-table-title-item-em-contact {
+    min-width: 200px;
+  }
   .people-table-item {
     height: 60px;
     transition: 0.3s;

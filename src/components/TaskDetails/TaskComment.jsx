@@ -30,25 +30,7 @@ const TaskComment = (props) => {
     }
     navigate(window.location.pathname);
   };
-  // useEffect(() => {
-  //   const fetchComment = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `http://127.0.0.1:8000/api/getComments/?task_id=${props.taskId}`,
-  //         {
-  //           headers: {
-  //             Authorization: `JWT ${localStorage.getItem("access")}`, // Use getItem instead of setItem
-  //           },
-  //         }
-  //       );
-  //       setComments(response.data);
-  //       console.log(response.data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   fetchComment(); // Invoke the fetchData function
-  // }, []);
+
   return (
     <div className="task-comment">
       <div className="task-comment-reminder">

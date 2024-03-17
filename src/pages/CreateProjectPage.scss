@@ -1,0 +1,214 @@
+.create-project {
+  .create-project-header {
+    display: flex;
+    align-items: center;
+    color: #5a5a5a;
+    margin-left: 20px;
+    margin-top: 20px;
+    .back-to-project-page-svg {
+      color: #5a5a5a;
+    }
+    .create-project-title {
+      font-size: 26px;
+      font-weight: 500;
+      margin-left: 10px;
+      margin-bottom: 5px;
+    }
+  }
+  .create-project-body {
+    width: 96%;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+    .create-project-body-general {
+      .create-project-body-general-title {
+        font-size: 24px;
+        color: #5a5a5a;
+        margin-bottom: 20px;
+      }
+      .create-project-body-general-project-info {
+        display: flex;
+        // justify-content: space-between;
+        .create-project-body-general-project-name {
+          width: 60%;
+          margin-right: 10%;
+          max-width: 500px;
+          .create-project-body-general-project-name-title {
+            font-size: 15px;
+            color: #6b778c;
+          }
+          .create-project-body-general-project-name-input {
+            margin-top: 3px;
+            height: 30px;
+            width: 100%;
+            padding-left: 15px;
+            border-radius: 5px;
+            border: 1px solid #dddddd;
+          }
+        }
+        .create-project-body-general-project-code-title {
+          font-size: 15px;
+          color: #6b778c;
+        }
+        .create-project-body-general-project-code-input {
+          margin-top: 3px;
+          height: 30px;
+          width: 100%;
+          padding-left: 15px;
+          border-radius: 5px;
+          border: 1px solid #dddddd;
+        }
+      }
+      .create-project-body-general-description {
+        margin-top: 15px;
+        .create-project-body-general-project-description-title {
+          font-size: 15px;
+          color: #6b778c;
+        }
+        .create-project-body-general-project-description-input {
+          margin-top: 3px;
+          height: 80px;
+          width: 95%;
+          padding-left: 15px;
+          border-radius: 5px;
+          border: 1px solid #dddddd;
+          padding-top: 10px;
+        }
+      }
+    }
+    .create-project-body-details {
+      margin-top: 60px;
+      .create-project-body-details-title {
+        font-size: 24px;
+        color: #5a5a5a;
+        margin-bottom: 20px;
+      }
+      .create-project-body-details-state-title {
+        font-size: 15px;
+        color: #6b778c;
+      }
+      .create-project-body-details-state-container {
+        display: flex;
+        cursor: pointer;
+        margin-top: 5px;
+        .create-project-body-details-state-open {
+          height: 40px;
+          width: 100px;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 600;
+          border: 2px solid #dddddd;
+        }
+
+        .create-project-body-details-state-in-progress {
+          height: 40px;
+          width: 130px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 600;
+          border: 2px solid #dddddd;
+        }
+        .create-project-body-details-state-done {
+          height: 40px;
+          width: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 600;
+          border: 2px solid #dddddd;
+        }
+        .create-project-body-details-state-on-hold {
+          height: 40px;
+          width: 100px;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 600;
+          border: 2px solid #dddddd;
+        }
+        .create-project-body-details-state-active {
+          background-color: #9660bf;
+          color: white;
+          border: 2px solid #9660bf;
+        }
+      }
+      .create-project-body-details-priority-title {
+        margin-top: 20px;
+        font-size: 15px;
+        color: #6b778c;
+      }
+      .create-project-body-details-priority-container {
+        display: flex;
+        cursor: pointer;
+        margin-top: 5px;
+        .create-project-body-details-priority-open {
+          height: 40px;
+          width: 100px;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 600;
+          border: 2px solid #dddddd;
+        }
+
+        .create-project-body-details-priority-in-progress {
+          height: 40px;
+          width: 130px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 600;
+          border: 2px solid #dddddd;
+        }
+        .create-project-body-details-priority-done {
+          height: 40px;
+          width: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 600;
+          border: 2px solid #dddddd;
+        }
+        .create-project-body-details-priority-on-hold {
+          height: 40px;
+          width: 100px;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 600;
+          border: 2px solid #dddddd;
+        }
+        .create-project-body-details-priority-active {
+          background-color: rgb(46, 150, 255);
+          color: white;
+          border: 2px solid rgb(46, 150, 255);
+        }
+      }
+
+      .date-container {
+        width: 200px;
+        margin-top: 20px;
+        .date-title {
+          font-size: 15px;
+          color: #6b778c;
+        }
+      }
+    }
+  }
+}
