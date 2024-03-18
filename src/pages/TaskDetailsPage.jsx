@@ -28,8 +28,6 @@ const TaskDetailsPage = () => {
           }
         );
         setTaskData(response.data[0]);
-        console.log("task details page");
-        console.log(response.data[0]);
       } catch (error) {
         console.log(error);
       }
@@ -49,7 +47,6 @@ const TaskDetailsPage = () => {
           }
         );
         setComments(response.data);
-        console.log(response.data);
       } catch (error) {
         console.log(error);
       }

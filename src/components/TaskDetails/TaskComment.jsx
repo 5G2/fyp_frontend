@@ -24,11 +24,11 @@ const TaskComment = (props) => {
       );
       props.setCommentState((value) => value + 1);
       setComment("");
+      navigate(window.location.pathname);
     } catch (error) {
       // Handle the error
       console.error(error);
     }
-    navigate(window.location.pathname);
   };
 
   return (

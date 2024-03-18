@@ -25,7 +25,7 @@ const ActivityBlock = (props) => {
       <div className="activity-block-title">Recent Activity</div>
       <div className="activity-block-details">
         Check out any update in your project!{" "}
-        <Link className="activity-block-create-new-tasks">
+        <Link className="activity-block-create-new-tasks" to="/create-task">
           Create new tasks.
         </Link>
       </div>

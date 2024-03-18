@@ -38,8 +38,11 @@ const Task = (props) => {
           <div className="task-name">{props.title}</div>
           <div className="task-detail">{props.description}</div>
         </div>
+        <MdOutlineArrowRightAlt
+          size={30}
+          className="task-details-info-arrow-svg"
+        />
       </div>
-      <MdOutlineArrowRightAlt size={30} className="arrow-svg" />
     </div>
   );
 };

@@ -5,7 +5,9 @@ import ListTable from "./ListTable";
 const List = (props) => {
   return (
     <div className="list">
-      <button className="create-new-task-btn">Create new task</button>
+      <Link className="create-new-task-btn" to="/create-task">
+        Create new task
+      </Link>
       <ListTable />
     </div>
   );

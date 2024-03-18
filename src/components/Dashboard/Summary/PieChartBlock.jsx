@@ -73,7 +73,7 @@ const PieChartBlock = (props) => {
       <div className="pie-chart-title">Status</div>
       <div className="pie-chart-details">
         Get a snapshot of the status of your items.{" "}
-        <Link>Check all Items.</Link>
+        <Link to="../dashboard/list">Check all Items.</Link>
       </div>
       <PieChart
         series={[

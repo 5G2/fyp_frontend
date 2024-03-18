@@ -8,14 +8,20 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs, { Dayjs, format } from "dayjs";
 
-import "./CreateProjectPage.scss";
+import "./CreateTaskPage.scss";
 import PeopleSelector from "../components/PeopleSelector";
 import { Button } from "@mui/material";
-const CreateProjectPage = () => {
+import ProjectSelector from "../components/ProjectSelector";
+import PrioritySelector from "../components/PrioritySelector";
+const CreateTaskPage = () => {
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
   const [description, setDescription] = useState("");
-  const [leader, setLeader] = useState(1);
+  const [assignee, setAssignee] = useState(1);
+  const [reporter, setReporter] = useState(1);
+  const [state, setState] = useState(1);
+  const [priority, setPriority] = useState(1);
+  const [project, setProject] = useState(0);
   const [startDate, setStartDate] = useState(dayjs(new Date()));
   const [dueDate, setDueDate] = useState(dayjs(new Date() + 1));
   const navigate = useNavigate();
@@ -32,15 +38,18 @@ const CreateProjectPage = () => {
   const handleSubmit = async (event) => {
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/createProject/",
+        "http://127.0.0.1:8000/api/createTask/",
         {
           name: name,
           code: code,
           start_date: changeDateFormat(startDate),
           due_date: changeDateFormat(dueDate),
-          state: 0,
+          state: state,
           description: description,
-          leader: leader,
+          assignee: assignee,
+          reportor: reporter,
+          project_id: project,
+          priority: priority,
         },
         {
           headers: {
@@ -49,7 +58,7 @@ const CreateProjectPage = () => {
         }
       );
 
-      navigate("../project");
+      navigate("../dashboard/summary");
     } catch (error) {
       console.error(error);
     }
@@ -64,13 +73,14 @@ const CreateProjectPage = () => {
     return formattedDate; // Output: 2024-03-18
   };
 
+  console.log(priority);
   return (
     <div className="create-project">
       <div className="create-project-header">
         <Link to="/project">
           <LuArrowLeft size={25} className="back-to-project-page-svg" />
         </Link>
-        <div className="create-project-title">New Project</div>
+        <div className="create-project-title">New Task</div>
       </div>
       <div className="create-project-body">
         <div className="create-project-body-general">
@@ -78,7 +88,7 @@ const CreateProjectPage = () => {
           <div className="create-project-body-general-project-info">
             <div className="create-project-body-general-project-name">
               <div className="create-project-body-general-project-name-title">
-                Project name
+                Task name
               </div>
               <input
                 className="create-project-body-general-project-name-input"
@@ -89,19 +99,20 @@ const CreateProjectPage = () => {
             </div>
             <div className="create-project-body-general-project-code">
               <div className="create-project-body-general-project-code-title">
-                Project code
+                Task code (will be generated automatically)
               </div>
               <input
                 className="create-project-body-general-project-code-input"
-                placeholder="APK"
+                placeholder="APK-XXX"
                 value={code}
+                disabled
                 onChange={handleCodeChange}
               />
             </div>
           </div>
           <div className="create-project-body-general-description">
             <div className="create-project-body-general-project-description-title">
-              Project description
+              Task description
             </div>
             <textarea
               className="create-project-body-general-project-description-input"
@@ -113,9 +124,21 @@ const CreateProjectPage = () => {
         </div>
         <div className="create-project-body-details">
           <div className="create-project-body-details-title">Details</div>
-          <div className="leader-container">
-            <div className="leader-title">Leader:</div>
-            <PeopleSelector setPeople={setLeader} />
+          <div className="people-container">
+            <div className="people-title">Assignee:</div>
+            <PeopleSelector setPeople={setAssignee} color={"#1976d2"} />
+          </div>
+          <div className="people-container">
+            <div className="people-title">Reporter:</div>
+            <PeopleSelector setPeople={setReporter} color={"#8c619d"} />
+          </div>
+          <div className="people-container">
+            <div className="people-title">Project:</div>
+            <ProjectSelector setPeople={setProject} />
+          </div>
+          <div className="people-container">
+            <div className="people-title">Priority:</div>
+            <PrioritySelector setPeople={setPriority} />
           </div>
           <div className="date-container">
             <div className="date-title">Start date</div>
@@ -145,10 +168,10 @@ const CreateProjectPage = () => {
           </div>
         </div>
         <Button className="create-btn" onClick={() => handleSubmit()}>
-          Create new project
+          Create new Task
         </Button>
       </div>
     </div>
   );
 };
-export default CreateProjectPage;
+export default CreateTaskPage;

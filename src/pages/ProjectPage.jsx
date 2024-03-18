@@ -43,7 +43,7 @@ const ProjectPage = () => {
         <div className="project-section-title">In - Progress</div>
         <div className="projects-container">
           {projects
-            // .filter((project) => project.state === 0)
+            .filter((project) => project.state === 0)
             .map((project) => {
               // console.log(new Date(project.start_date));
               return (

@@ -16,6 +16,7 @@ import TaskDetailsPage from "./pages/TaskDetailsPage";
 import ProjectDetails from "./pages/ProjectDetails";
 import OtherProfile from "./pages/OtherProfile";
 import CreateProjectPage from "./pages/CreateProjectPage";
+import CreateTaskPage from "./pages/CreateTaskPage";
 export const UserContext = createContext(null);
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
                   <Route path="/task/:code" element={<TaskDetailsPage />} />
                   <Route path="/project/:id/:projectDetailsPage" element={<ProjectDetails />} />
                   <Route path="/create-project" element={<CreateProjectPage />} />
+                  <Route path="/create-task" element={<CreateTaskPage />} />
                 </Routes>
               </Layout>
             </Router>
