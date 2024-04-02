@@ -25,42 +25,7 @@ const ListTable = (props) => {
     };
     fetchTasks(); // Invoke the fetchData function
   }, []);
-  const [tasks, setTasks] = useState([
-    {
-      id: "APK-001",
-      summary:
-        "Sumary of the first task in the table. Make it longer to have two line. in the summary",
-      status: "Open",
-      dueDate: "2022-12-4",
-      project: "New Project",
-      assignee: "Ivan Ng",
-    },
-    {
-      id: "APK-001",
-      summary:
-        "Sumary of the first task in the table. Make it longer to have two line. in the summary",
-      status: "Done",
-      dueDate: "2022-12-4",
-      project: "New Project",
-      assignee: "Ivan Ng",
-    },
-    {
-      id: "APK-001",
-      summary:
-        "Sumary of the first task in the table. Make it longer to have two line. in the summary",
-      status: "In-Progress",
-      dueDate: "2022-12-4",
-      project: "New Project",
-    },
-    {
-      id: "APK-001",
-      summary:
-        "Sumary of the first task in the table. Make it longer to have two line. in the summary",
-      status: "Open",
-      dueDate: "2022-12-4",
-      project: "New Project",
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
   const checkStatus = (value) => {
     switch (value) {

@@ -17,6 +17,8 @@
       padding-left: 10px;
       padding-right: 10px;
       cursor: pointer;
+      text-decoration: none;
+      color: #999999;
     }
     .filter-list-item-active {
       color: var(--ds-text-selected, #0052cc);

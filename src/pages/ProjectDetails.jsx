@@ -14,6 +14,7 @@ import Summary from "../components/ProjectDetails/Summary/Summary";
 import List from "../components/ProjectDetails/List/List";
 import Board from "../components/ProjectDetails/Board/Board";
 import Calendar from "../components/ProjectDetails/Calendar/Calendar";
+import ProjectPeople from "../components/ProjectDetails/ProjectPeople/ProjectPeople";
 import "./ProjectDetails.scss";
 
 const ProjectDetails = () => {
@@ -21,7 +22,7 @@ const ProjectDetails = () => {
   let { projectDetailsPage } = useParams();
   let { id } = useParams();
 
-  const [taskDone, setTaskDone] = useState(0);
+  const [taskDone, setTaskDone] = useState(1);
   const [taskUpdate, setTaskUpdate] = useState(0);
   const [taskCreate, setTaskCreate] = useState(0);
   const [taskDue, setTaskDue] = useState(0);
@@ -42,12 +43,36 @@ const ProjectDetails = () => {
         return <List />;
       case "calendar":
         return <Calendar />;
+      case "people":
+        return <ProjectPeople />;
       default:
         return "foo";
     }
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const fetchSevenDaysTasksNumber = async () => {
+      try {
+        const response = await axios.get(
+          `http://127.0.0.1:8000/api/getSevenDaysTasksNumber/?project_code=${id}`,
+          {
+            headers: {
+              Authorization: `JWT ${localStorage.getItem("access")}`, // Use getItem instead of setItem
+            },
+          }
+        );
+        setTaskDone(response.data.number_of_done_task);
+        setTaskUpdate(response.data.number_of_updated_tasks);
+        setTaskCreate(response.data.number_of_create_task);
+        setTaskDue(response.data.number_of_due_tasks);
+        // Process the response data here
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchSevenDaysTasksNumber(); // Invoke the fetchData function
+  }, []);
   return (
     <div className="project-details-container">
       <div className="project-details-top">

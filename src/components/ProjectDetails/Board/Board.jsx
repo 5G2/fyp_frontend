@@ -9,10 +9,10 @@ const Board = (props) => {
   return (
     <div className="board">
       <div className="kan-ban-container">
-        <OpenTaskList taskNumber={20} />
-        <InProgressTaskList taskNumber={5} />
-        <DoneTaskList taskNumber={0} />
-        <OnHoldTaskList taskNumber={7} />
+        <OpenTaskList />
+        <InProgressTaskList />
+        <DoneTaskList />
+        <OnHoldTaskList />
       </div>
     </div>
   );

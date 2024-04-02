@@ -8,7 +8,6 @@ import "./MenuBar.scss";
 const MenuBar = () => {
   const context = useContext(UserContext);
   const page = context.page;
-  console.log(page);
 
   const changePage = (value) => {
     context.setPage(value);

@@ -43,7 +43,12 @@ const TaskHeader = (props) => {
           <FaUserCircle size={25} className="user-svg" />
           {props.assignee}
         </Link>
-        <Link className="task-basic-info clickable">{props.project}</Link>
+        <Link
+          className="task-basic-info clickable"
+          to={`/project/${props.project_code}/summary`}
+        >
+          {props.project}
+        </Link>
         <div className="task-basic-info non-clickable">{props.dueDate}</div>
       </div>
       <div className="task-description-container">

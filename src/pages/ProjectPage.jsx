@@ -95,7 +95,7 @@ const ProjectPage = () => {
                   openTask={project.open_task}
                   inProgress={project.in_progress_task}
                   onHoldTask={project.on_hold_task}
-                  id={project.code}
+                  code={project.code}
                 />
               );
             })}{" "}

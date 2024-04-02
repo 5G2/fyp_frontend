@@ -6,6 +6,7 @@ import { jwtDecode } from "jwt-decode";
 
 import "./Login.scss";
 const Login = () => {
+  const [loginFail, setLoginFail] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const context = useContext(UserContext);
@@ -34,6 +35,7 @@ const Login = () => {
         navigate("../dashboard/summary");
       }
     } catch (error) {
+      setLoginFail(true);
       console.error(error);
     }
   };
@@ -78,6 +80,11 @@ const Login = () => {
               placeholder="Enter your password"
             />
           </div>
+          {loginFail == true ? (
+            <div className="incorrect-password">
+              Incorrect Account or Password
+            </div>
+          ) : null}
           <div className="btn-container">
             <button type="submit" className="login-btn">
               Login

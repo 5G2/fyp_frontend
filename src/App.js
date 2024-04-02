@@ -59,6 +59,7 @@ function App() {
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/profile/:id" element={<OtherProfile />} />
                   <Route path="/notification" element={<NotificationPage />} />
+                  <Route path="/notification/:page" element={<NotificationPage />} />
                   <Route path="/task/:code" element={<TaskDetailsPage />} />
                   <Route path="/project/:id/:projectDetailsPage" element={<ProjectDetails />} />
                   <Route path="/create-project" element={<CreateProjectPage />} />

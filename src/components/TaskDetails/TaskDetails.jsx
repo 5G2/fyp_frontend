@@ -7,8 +7,26 @@ import "./TaskDetails.scss";
 import { border } from "@cloudinary/url-gen/qualifiers/background";
 
 const TaskDetails = (props) => {
-  console.log("props.priority");
-  console.log(props.priority);
+  var currentValue = props.state;
+
+  const ChangeTaskState = (value) => {
+    currentValue = value;
+    try {
+      axios.post(
+        "http://127.0.0.1:8000/api/modifyTask/",
+        {
+          task_id: props.task_id,
+          state: value,
+        },
+        {
+          headers: { Authorization: `JWT ${localStorage.getItem("access")}` },
+        }
+      );
+    } catch (error) {
+      // Handle the error
+      console.error(error);
+    }
+  };
   const checkPriority = (value) => {
     switch (value) {
       case 1:
@@ -50,11 +68,16 @@ const TaskDetails = (props) => {
       </div>
       <div className="task-details-item-container">
         <div className="tast-person-title">Status:</div>
-        <select className="status-selector" value={props.status}>
+        <select
+          // defaultValue={props.state}
+          value={currentValue}
+          className="status-selector"
+          onChange={(e) => ChangeTaskState(e.target.value)}
+        >
           <option value={1}>Open</option>
           <option value={2}>In Progress</option>
-          <option value={3}>On Hold</option>
-          <option value={4}>Closed</option>
+          <option value={3}>Closed</option>
+          <option value={4}>On Hold</option>
         </select>
       </div>
       <div className="task-details-item-container">

@@ -20,7 +20,7 @@ const TaskDetailsPage = () => {
     const fetchTasks = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/getTasks/?task_id=${code}`,
+          `http://127.0.0.1:8000/api/getTasks/?task_code=${code}`,
           {
             headers: {
               Authorization: `JWT ${localStorage.getItem("access")}`, // Use getItem instead of setItem
@@ -72,6 +72,7 @@ const TaskDetailsPage = () => {
         dueDate={taskData.due_date}
         priority={taskData.priority}
         description={taskData.description}
+        project_code={taskData.project_code}
       />
       <div className="task-details-bottom">
         <div className="task-details-bottom-left">
@@ -89,12 +90,13 @@ const TaskDetailsPage = () => {
           <div className="task-details-title">Details</div>
           <TaskDetails
             creatorName={taskData.creator}
+            task_id={taskData.id}
             reportor={taskData.reportor}
             assignee={taskData.assignee}
             creationDate={taskData.create_at}
             startDate={taskData.start_date}
             priority={taskData.priority}
-            status={taskData.state}
+            state={taskData.state}
           />
         </div>
       </div>

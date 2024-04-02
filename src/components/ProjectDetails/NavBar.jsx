@@ -50,9 +50,9 @@ const NavBar = (props) => {
             ? "nav-bar-item active"
             : "nav-bar-item "
         }
-        to={`/project/${props.id}/attachment`}
+        to={`/project/${props.id}/people`}
       >
-        Attachment
+        People
       </Link>
     </div>
   );

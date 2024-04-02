@@ -56,6 +56,13 @@
         }
       }
     }
+    .incorrect-password {
+      color: red;
+      position: absolute;
+      left: 50px;
+      bottom: 120px;
+      font-size: 12px;
+    }
     .btn-container {
       width: 100%;
       position: absolute;

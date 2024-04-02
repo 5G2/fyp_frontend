@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import axios from "axios";
 import DoneBlock from "./DoneBlock";
@@ -14,6 +14,7 @@ import "./PieChartBlock.scss";
 
 const PieChartBlock = (props) => {
   // const context = useContext(UserContext);
+  let { id } = useParams();
 
   const [data, setData] = useState([
     { label: "Open", value: 0 },
@@ -25,7 +26,7 @@ const PieChartBlock = (props) => {
     const fetchAllTasksNumber = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/getTotalTaskNumber/",
+          `http://127.0.0.1:8000/api/getTotalTaskNumber/?project_code=${id}`,
           {
             headers: {
               Authorization: `JWT ${localStorage.getItem("access")}`, // Use getItem instead of setItem
